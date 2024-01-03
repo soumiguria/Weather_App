@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:weather_app/additional_info_item.dart';
+import 'package:weather_app/hourly_forecast_item.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -41,7 +43,7 @@ class WeatherScreen extends StatelessWidget {
                       padding: EdgeInsets.all(16.0),
                       child: Column(children: [
                         Text(
-                          '300°F',
+                          '300K',
                           style: TextStyle(
                               fontSize: 32, fontWeight: FontWeight.bold),
                         ),
@@ -74,11 +76,31 @@ class WeatherScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
+                  HourlyForecastItem(
+                    time: '00.00',
+                    icon: Icons.cloud,
+                    temperature: '300°F',
+                  ),
+                  HourlyForecastItem(
+                    time: '00.00',
+                    icon: Icons.sunny,
+                    temperature: '300°F',
+                  ),
+                  HourlyForecastItem(
+                    time: '00.00',
+                    icon: Icons.cloud,
+                    temperature: '300°F',
+                  ),
+                  HourlyForecastItem(
+                    time: '00.00',
+                    icon: Icons.sunny,
+                    temperature: '300°F',
+                  ),
+                  HourlyForecastItem(
+                    time: '00.00',
+                    icon: Icons.cloud,
+                    temperature: '300°F',
+                  ),
                 ],
               ),
             ),
@@ -90,69 +112,21 @@ class WeatherScreen extends StatelessWidget {
               'Additional Information',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const Row(children: [
-              AdditionalInfo(),
-              AdditionalInfo(),
-              AdditionalInfo(),
-            ]),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class AdditionalInfo extends StatelessWidget {
-  const AdditionalInfo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(18.0),
-      child: Column(
-        children: [
-          Icon(Icons.water_drop_rounded),
-          Text(
-            'Humidity',
-            style: TextStyle(
-              fontSize: 16,
-            ),
-          ),
-          Text("94", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-        ],
-      ),
-    );
-  }
-}
-
-class HourlyForecastItem extends StatelessWidget {
-  const HourlyForecastItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 6,
-      child: Container(
-        width: 100,
-        padding: const EdgeInsets.all(8.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: const Column(
-          children: [
-            Text(
-              '03:00',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 8),
-            Icon(Icons.cloud, size: 32),
-            SizedBox(height: 8),
-            Text(
-              '320.12',
-            ),
+            const SizedBox(height: 16),
+            const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  AdditionalInfoItem(
+                      icon: Icons.water_drop_rounded,
+                      label: 'Humidity',
+                      value: '94'),
+                  AdditionalInfoItem(
+                      icon: Icons.air, label: 'Wind Speed', value: '7.5'),
+                  AdditionalInfoItem(
+                      icon: Icons.beach_access,
+                      label: 'Pressure',
+                      value: '1000'),
+                ]),
           ],
         ),
       ),
