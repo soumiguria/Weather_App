@@ -4,7 +4,13 @@
 
 WeatherApp is a Flutter application that provides real-time weather information for any location around the globe. It uses the HTTP Flutter package to fetch data from the OpenWeatherMap API. The app offers a clean user interface, accurate weather forecasts, and the flexibility to switch between light and dark modes for a personalized experience.
 
-![WeatherApp Screenshot](/screenshots/screenshot.png)
+![WeatherApp Screenshot]
+![image](https://github.com/soumiguria/Weather_App/assets/69115226/13c3dd2a-cbff-43e7-a821-7a2d3a6b568a)
+![image](https://github.com/soumiguria/Weather_App/assets/69115226/f9a5e2ad-ac92-4ed4-9930-f8ec98597f21)
+![image](https://github.com/soumiguria/Weather_App/assets/69115226/fa086954-c77e-4650-a022-bd507cc5773e)
+
+
+
 
 ## Features
 
